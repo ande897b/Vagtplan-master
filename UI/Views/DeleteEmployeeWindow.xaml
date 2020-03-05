@@ -1,0 +1,22 @@
+﻿<Window x:Class="UI.Views.DeleteEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Views"
+        mc:Ignorable="d"
+        Title="Slet Medarbejder" Height="453.826" Width="555.241" Background="#FF0C9368">
+    <Grid Margin="0,0,-8,1">
+        <ListView x:Name="EmployeeListView" HorizontalAlignment="Left" Height="308" Margin="41,77,0,0" VerticalAlignment="Top" Width="461" SelectionChanged="EmployeeListView_SelectionChanged" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="EmployeeIDColumn" Header="ID" Width="50" DisplayMemberBinding="{Binding Path=EmployeeID}"/>
+                    <GridViewColumn x:Name="FirstNameColumn" Header="Fornavn" Width="150" DisplayMemberBinding="{Binding Path=FirstName}" />
+                    <GridViewColumn x:Name="LastNameColumn" Header="Efternavn" Width="150" DisplayMemberBinding="{Binding Path=LastName}"/>
+                    <GridViewColumn x:Name="RankColumn" Header="Stilling" Width="100" DisplayMemberBinding="{Binding Path=Rank}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Vælg medarbejder som du vil slette" HorizontalAlignment="Left" Margin="172,31,0,0" VerticalAlignment="Top" Width="203"/>
+    </Grid>
+</Window>

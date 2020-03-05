@@ -1,0 +1,34 @@
+﻿<Window x:Class="UI.Views.ExchangeDutyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Views"
+        mc:Ignorable="d"
+        Title="Byt vagt" Height="593.83" Width="989.901" Background="#FF0C9368">
+    <Grid>
+        <ComboBox x:Name="EmployeeCB" HorizontalAlignment="Left" Margin="44,55,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="EmployeeCB_SelectionChanged" Height="34"/>
+        <Label Content="Vælg for at se &#xD;&#xA;medarbejders vagter" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="120" Height="45"/>
+        <Label Content="Vælg vagt som medarbejder vil bytte" HorizontalAlignment="Left" Margin="193,55,0,0" VerticalAlignment="Top" Width="215" Height="34"/>
+        <Label Content="Vagter der vil byttes" HorizontalAlignment="Left" Margin="670,55,0,0" VerticalAlignment="Top" Width="122" Height="34"/>
+        <ListView x:Name="DutyListView" HorizontalAlignment="Left" Height="416" Margin="44,94,0,0" VerticalAlignment="Top" Width="471" SelectionChanged="DutyListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="DutyIDColumn" Header="Vagt ID" Width="65" DisplayMemberBinding="{Binding Path=Duty.DutyID}"/>
+                    <GridViewColumn x:Name="StartTimeColumn" Header="Start" Width="150" DisplayMemberBinding="{Binding Path=Duty.StartTime}" />
+                    <GridViewColumn x:Name="EndTimeColumn" Header="Slut" Width="150" DisplayMemberBinding="{Binding Path=Duty.EndTime}"/>
+                    <GridViewColumn x:Name="EmployeeColumn" Header="Medarbejder" Width="100" DisplayMemberBinding="{Binding Path=EmployeeName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="DutyExchangeListView" HorizontalAlignment="Left" Height="416" Margin="527,94,0,0" VerticalAlignment="Top" Width="409" SelectionChanged="DutyExchangeListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="DutyIDColumn2" Header="Navn" Width="100" DisplayMemberBinding="{Binding Path=EmployeeName}"/>
+                    <GridViewColumn x:Name="StartTimeColumn2" Header="Start" Width="150" DisplayMemberBinding="{Binding Path=Duty.StartTime}" />
+                    <GridViewColumn x:Name="EndTimeColumn2" Header="Slut" Width="150" DisplayMemberBinding="{Binding Path=Duty.EndTime}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
